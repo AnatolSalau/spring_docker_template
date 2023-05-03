@@ -23,8 +23,6 @@ public class IndexController {
       @Value("${app.home.title}")
       private String title;
 
-
-
       @GetMapping
       public String getIndex() {
             List<User> all = userService.getAll();
