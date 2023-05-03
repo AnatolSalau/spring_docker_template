@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+   app:
+      container_name: app_container
+      build: .
+      ports:
+         -  "8086:8080"
+         -  "8087:8087"
+      environment:
+         app.home.title: "variable from docker compose"
