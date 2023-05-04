@@ -11,6 +11,7 @@ services:
          spring.datasource.url: "jdbc:postgresql://db:5432/testdb"
          spring.datasource.username: "postgres"
          spring.datasource.password: "postgres"
+         spring.jpa.hibernate.ddl-auto: update
       networks:
          - "test_network"
    db:
@@ -22,7 +23,12 @@ services:
          POSTGRES_USER: "postgres"
          POSTGRES_PASSWORD: "postgres"
          POSTGRES_DB: "testdb"
+      volumes:
+         -  myvolume:/var/lib/postgresql/data
       networks:
          - "test_network"
 networks:
    test_network:
+
+volumes:
+   myvolume:
